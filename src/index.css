@@ -7,3 +7,8 @@
   html { @apply bg-white dark:bg-zinc-950; scroll-behavior: smooth; }
   body { @apply text-zinc-900 dark:text-zinc-100 antialiased; }
 }
+
+@layer utilities {
+  .reveal { @apply opacity-0 translate-y-6 transition-all duration-700 ease-out; }
+  .reveal.show { @apply opacity-100 translate-y-0; }
+}
