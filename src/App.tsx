@@ -47,7 +47,7 @@ export default function App() {
       (entries) => {
         entries.forEach((entry) => {
           const target = entry.target as HTMLElement
-          if (target.hasAttribute('data-reveal')) {
+          if (target.hasAttribute('data-reveal') || target.hasAttribute('data-fade')) {
             if (entry.isIntersecting) target.classList.add('show')
           }
           if (target.tagName === 'SECTION' && target.id) {

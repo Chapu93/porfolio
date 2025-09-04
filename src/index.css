@@ -15,4 +15,5 @@
   .no-js .reveal { @apply opacity-100 translate-y-0; }
   .fade-in { @apply opacity-0 transition-opacity duration-700 ease-out; }
   .fade-in.show { @apply opacity-100; }
+  .no-js .fade-in { @apply opacity-100; }
 }
