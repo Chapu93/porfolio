@@ -193,8 +193,8 @@ export default function App() {
         </section>
       </main>
 
-      <footer className="bg-inherit border-t border-zinc-200/60 dark:border-zinc-800/60">
-        <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-zinc-500">
+      <footer className="bg-white dark:bg-zinc-950 border-t border-zinc-200/60 dark:border-zinc-800/60 transition-colors duration-300">
+        <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-zinc-500 dark:text-zinc-400">
           © {new Date().getFullYear()} Joaquín Villaverde. Todos los derechos reservados.
         </div>
       </footer>
