@@ -81,7 +81,7 @@ export default function App() {
 
   return (
     <div className="min-h-full transition-colors duration-300">
-      <header className="sticky top-0 z-40 bg-white/80 dark:bg-zinc-950/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-zinc-950/60 border-b border-zinc-200/60 dark:border-zinc-800/60 transition-colors duration-300">
+      <header className="sticky top-0 z-40 bg-white/80 dark:bg-zinc-900/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-zinc-900/60 border-b border-zinc-200/60 dark:border-zinc-800/60 transition-colors duration-300">
         <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="h-9 w-9 rounded-lg bg-gradient-to-br from-orange-500 to-amber-600 text-white grid place-items-center font-semibold">
@@ -118,7 +118,7 @@ export default function App() {
         </div>
       </header>
 
-      <main className="bg-white dark:bg-zinc-950">
+      <main className="bg-white dark:bg-zinc-900">
         {/* Hero */}
         <section id="hero" className="bg-inherit border-b border-zinc-200/60 dark:border-zinc-800/60">
           <div className="mx-auto max-w-6xl px-4 py-20 grid gap-8 md:grid-cols-2 items-center">
@@ -206,7 +206,7 @@ export default function App() {
         </section>
       </main>
 
-      <footer className="bg-white dark:bg-zinc-950 border-t border-zinc-200/60 dark:border-zinc-800/60 transition-colors duration-300">
+      <footer className="bg-white dark:bg-zinc-900 border-t border-zinc-200/60 dark:border-zinc-800/60 transition-colors duration-300">
         <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-zinc-500 dark:text-zinc-400">
           © {new Date().getFullYear()} Joaquín Villaverde. Todos los derechos reservados.
         </div>

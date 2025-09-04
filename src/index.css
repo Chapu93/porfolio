@@ -4,8 +4,8 @@
 
 @layer base {
   html, body, #root { height: 100%; }
-  html { @apply bg-white dark:bg-zinc-950; scroll-behavior: smooth; }
-  body { @apply bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 antialiased transition-colors font-sans; }
+  html { @apply bg-white dark:bg-zinc-900; scroll-behavior: smooth; }
+  body { @apply bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 antialiased transition-colors font-sans; }
 }
 
 @layer utilities {
