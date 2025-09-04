@@ -130,7 +130,7 @@ export default function App() {
         </section>
 
         {/* Sobre mí */}
-        <section id="about" className="bg-white dark:bg-zinc-950 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
+        <section id="about" className="bg-white dark:bg-zinc-950 border-t border-zinc-200/60 dark:border-zinc-800/60 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
           <h2 className="text-2xl font-semibold">Sobre mí</h2>
           <p className="mt-3 text-zinc-600 dark:text-zinc-300 reveal" data-reveal>
             Me especializo en crear interfaces limpias y APIs escalables. Disfruto optimizar rendimiento, accesibilidad y DX. Busco aportar valor medible a equipos ambiciosos.
@@ -138,18 +138,18 @@ export default function App() {
         </section>
 
         {/* Habilidades */}
-        <section id="skills" className="bg-white dark:bg-zinc-950 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
+        <section id="skills" className="bg-white dark:bg-zinc-950 border-t border-zinc-200/60 dark:border-zinc-800/60 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
           <h2 className="text-2xl font-semibold">Habilidades</h2>
           <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4 reveal" data-reveal>
+            <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4 reveal transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm dark:hover:shadow-zinc-900/50" data-reveal>
               <h3 className="font-medium">Frontend</h3>
               <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">React, TypeScript, Tailwind CSS</p>
             </div>
-            <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4 reveal" data-reveal>
+            <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4 reveal transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm dark:hover:shadow-zinc-900/50" data-reveal>
               <h3 className="font-medium">Backend</h3>
               <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">Node.js, REST, autenticación</p>
             </div>
-            <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4 reveal" data-reveal>
+            <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4 reveal transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm dark:hover:shadow-zinc-900/50" data-reveal>
               <h3 className="font-medium">Bases de datos</h3>
               <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">PostgreSQL, MySQL, modelado y consultas</p>
             </div>
@@ -157,7 +157,7 @@ export default function App() {
         </section>
 
         {/* Proyectos */}
-        <section id="projects" className="bg-white dark:bg-zinc-950 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
+        <section id="projects" className="bg-white dark:bg-zinc-950 border-t border-zinc-200/60 dark:border-zinc-800/60 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
           <h2 className="text-2xl font-semibold">Proyectos</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-3">
             <ProjectCard title="Landing Page" description="Página de presentación rápida y moderna con performance optimizada." stack="React, Tailwind" />
@@ -167,7 +167,7 @@ export default function App() {
         </section>
 
         {/* Contacto */}
-        <section id="contact" className="bg-white dark:bg-zinc-950 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
+        <section id="contact" className="bg-white dark:bg-zinc-950 border-t border-zinc-200/60 dark:border-zinc-800/60 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
           <h2 className="text-2xl font-semibold">Contacto</h2>
           <form
             className="mt-6 grid gap-4 max-w-xl"
@@ -204,7 +204,7 @@ export default function App() {
 
 function ProjectCard({ title, description, stack }: { title: string; description: string; stack: string }) {
   return (
-    <article className="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 hover:border-indigo-300 dark:hover:border-indigo-600 transition-colors reveal" data-reveal>
+    <article className="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 hover:border-indigo-300 dark:hover:border-indigo-600 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:hover:shadow-zinc-900/50 reveal" data-reveal>
       <h3 className="font-medium">{title}</h3>
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">{description}</p>
       <p className="mt-3 text-xs text-zinc-500">Stack: {stack}</p>
