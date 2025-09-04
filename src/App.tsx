@@ -81,7 +81,7 @@ export default function App() {
 
   return (
     <div className="min-h-full transition-colors duration-300">
-      <header className="sticky top-0 z-40 bg-white/80 dark:bg-zinc-900/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-zinc-900/60 border-b border-zinc-200/60 dark:border-zinc-800/60 transition-colors duration-300">
+      <header className="sticky top-0 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-slate-900/60 border-b border-zinc-200/60 dark:border-slate-800/60 transition-colors duration-300">
         <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="h-9 w-9 rounded-lg bg-gradient-to-br from-orange-500 to-amber-600 text-white grid place-items-center font-semibold">
@@ -118,9 +118,9 @@ export default function App() {
         </div>
       </header>
 
-      <main className="bg-white dark:bg-zinc-900">
+      <main className="bg-white dark:bg-slate-900">
         {/* Hero */}
-        <section id="hero" className="bg-inherit border-b border-zinc-200/60 dark:border-zinc-800/60">
+        <section id="hero" className="bg-inherit border-b border-zinc-200/60 dark:border-slate-800/60">
           <div className="mx-auto max-w-6xl px-4 py-20 grid gap-8 md:grid-cols-2 items-center">
             <div className="reveal" data-reveal>
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
@@ -135,7 +135,7 @@ export default function App() {
               </div>
             </div>
             <div className="md:justify-self-end reveal" data-reveal>
-              <div className="h-48 md:h-64 w-full md:w-80 rounded-2xl bg-gradient-to-br from-orange-500/20 to-amber-600/20 border border-zinc-200 dark:border-zinc-800 grid place-items-center text-zinc-500 dark:text-zinc-400">
+              <div className="h-48 md:h-64 w-full md:w-80 rounded-2xl bg-gradient-to-br from-orange-500/20 to-amber-600/20 border border-zinc-200 dark:border-slate-800 grid place-items-center text-zinc-500 dark:text-slate-400">
                 Foto/Logo (pronto)
               </div>
             </div>
@@ -143,7 +143,7 @@ export default function App() {
         </section>
 
         {/* Sobre mí */}
-        <section id="about" className="bg-inherit border-t border-zinc-200/60 dark:border-zinc-800/60 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
+        <section id="about" className="bg-inherit border-t border-zinc-200/60 dark:border-slate-800/60 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
           <h2 className="text-2xl font-semibold fade-in underline-anim" data-fade>Sobre mí</h2>
           <p className="mt-3 text-zinc-600 dark:text-zinc-300 reveal" data-reveal>
             Me especializo en crear interfaces limpias y APIs escalables. Disfruto optimizar rendimiento, accesibilidad y DX. Busco aportar valor medible a equipos ambiciosos.
@@ -151,7 +151,7 @@ export default function App() {
         </section>
 
         {/* Habilidades */}
-        <section id="skills" className="bg-inherit border-t border-zinc-200/60 dark:border-zinc-800/60 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
+        <section id="skills" className="bg-inherit border-t border-zinc-200/60 dark:border-slate-800/60 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
           <h2 className="text-2xl font-semibold fade-in underline-anim" data-fade>Habilidades</h2>
           <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             <div style={{ transitionDelay: '0ms' }} className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4 reveal fade-in transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm dark:hover:shadow-zinc-900/50" data-reveal data-fade>
@@ -170,7 +170,7 @@ export default function App() {
         </section>
 
         {/* Proyectos */}
-        <section id="projects" className="bg-inherit border-t border-zinc-200/60 dark:border-zinc-800/60 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
+        <section id="projects" className="bg-inherit border-t border-zinc-200/60 dark:border-slate-800/60 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
           <h2 className="text-2xl font-semibold fade-in underline-anim" data-fade>Proyectos</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-3">
             <ProjectCard delayMs={0} title="Landing Page" description="Página de presentación rápida y moderna con performance optimizada." stack="React, Tailwind" />
@@ -180,7 +180,7 @@ export default function App() {
         </section>
 
         {/* Contacto */}
-        <section id="contact" className="bg-inherit border-t border-zinc-200/60 dark:border-zinc-800/60 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
+        <section id="contact" className="bg-inherit border-t border-zinc-200/60 dark:border-slate-800/60 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
           <h2 className="text-2xl font-semibold fade-in underline-anim" data-fade>Contacto</h2>
           <form
             className="mt-6 grid gap-4 max-w-xl"
@@ -191,23 +191,23 @@ export default function App() {
           >
             <div className="grid gap-1">
               <label htmlFor="name" className="text-sm text-zinc-600 dark:text-zinc-300">Nombre</label>
-              <input id="name" name="name" required className="h-11 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-3 transition-colors" />
+              <input id="name" name="name" required className="h-11 rounded-lg border border-zinc-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 transition-colors" />
             </div>
             <div className="grid gap-1">
               <label htmlFor="email" className="text-sm text-zinc-600 dark:text-zinc-300">Email</label>
-              <input id="email" name="email" type="email" required className="h-11 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-3 transition-colors" />
+              <input id="email" name="email" type="email" required className="h-11 rounded-lg border border-zinc-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 transition-colors" />
             </div>
             <div className="grid gap-1">
               <label htmlFor="message" className="text-sm text-zinc-600 dark:text-zinc-300">Mensaje</label>
-              <textarea id="message" name="message" rows={4} required className="rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-3 py-2 transition-colors" />
+              <textarea id="message" name="message" rows={4} required className="rounded-lg border border-zinc-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 transition-colors" />
             </div>
             <button type="submit" className="inline-flex items-center rounded-lg bg-orange-600 px-4 py-2 text-white hover:bg-orange-500 w-fit">Enviar</button>
           </form>
         </section>
       </main>
 
-      <footer className="bg-white dark:bg-zinc-900 border-t border-zinc-200/60 dark:border-zinc-800/60 transition-colors duration-300">
-        <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-zinc-500 dark:text-zinc-400">
+      <footer className="bg-white dark:bg-slate-900 border-t border-zinc-200/60 dark:border-slate-800/60 transition-colors duration-300">
+        <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-zinc-500 dark:text-slate-400">
           © {new Date().getFullYear()} Joaquín Villaverde. Todos los derechos reservados.
         </div>
       </footer>
