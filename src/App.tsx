@@ -144,7 +144,7 @@ export default function App() {
 
         {/* Sobre mí */}
         <section id="about" className="bg-inherit border-t border-zinc-200/60 dark:border-zinc-800/60 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
-          <h2 className="text-2xl font-semibold fade-in" data-fade>Sobre mí</h2>
+          <h2 className="text-2xl font-semibold fade-in underline-anim" data-fade>Sobre mí</h2>
           <p className="mt-3 text-zinc-600 dark:text-zinc-300 reveal" data-reveal>
             Me especializo en crear interfaces limpias y APIs escalables. Disfruto optimizar rendimiento, accesibilidad y DX. Busco aportar valor medible a equipos ambiciosos.
           </p>
@@ -152,7 +152,7 @@ export default function App() {
 
         {/* Habilidades */}
         <section id="skills" className="bg-inherit border-t border-zinc-200/60 dark:border-zinc-800/60 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
-          <h2 className="text-2xl font-semibold fade-in" data-fade>Habilidades</h2>
+          <h2 className="text-2xl font-semibold fade-in underline-anim" data-fade>Habilidades</h2>
           <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             <div style={{ transitionDelay: '0ms' }} className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4 reveal fade-in transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm dark:hover:shadow-zinc-900/50" data-reveal data-fade>
               <h3 className="font-medium">Frontend</h3>
@@ -171,7 +171,7 @@ export default function App() {
 
         {/* Proyectos */}
         <section id="projects" className="bg-inherit border-t border-zinc-200/60 dark:border-zinc-800/60 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
-          <h2 className="text-2xl font-semibold fade-in" data-fade>Proyectos</h2>
+          <h2 className="text-2xl font-semibold fade-in underline-anim" data-fade>Proyectos</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-3">
             <ProjectCard delayMs={0} title="Landing Page" description="Página de presentación rápida y moderna con performance optimizada." stack="React, Tailwind" />
             <ProjectCard delayMs={100} title="E‑commerce" description="Catálogo, carrito y checkout; enfoque en UX y mantenibilidad." stack="React, Node, DB" />
@@ -181,7 +181,7 @@ export default function App() {
 
         {/* Contacto */}
         <section id="contact" className="bg-inherit border-t border-zinc-200/60 dark:border-zinc-800/60 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
-          <h2 className="text-2xl font-semibold fade-in" data-fade>Contacto</h2>
+          <h2 className="text-2xl font-semibold fade-in underline-anim" data-fade>Contacto</h2>
           <form
             className="mt-6 grid gap-4 max-w-xl"
             onSubmit={(e) => {
