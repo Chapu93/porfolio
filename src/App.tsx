@@ -48,16 +48,18 @@ export default function App() {
         entries.forEach((entry) => {
           const target = entry.target as HTMLElement
           if (target.hasAttribute('data-reveal') || target.hasAttribute('data-fade')) {
-            if (entry.isIntersecting) target.classList.add('show')
+            if (entry.isIntersecting) {
+              requestAnimationFrame(() => target.classList.add('show'))
+            }
           }
           if (target.tagName === 'SECTION' && target.id) {
-            if (entry.isIntersecting && entry.intersectionRatio > 0.25) {
+            if (entry.isIntersecting && entry.intersectionRatio > 0.1) {
               setActive(target.id as SectionId)
             }
           }
         })
       },
-      { threshold: [0] }
+      { threshold: [0.1], rootMargin: '0px 0px -10% 0px' }
     )
 
     sections.forEach((s) => observer.observe(s))
@@ -67,9 +69,11 @@ export default function App() {
 
     // Revelar de inicio los elementos ya visibles en viewport
     const vh = window.innerHeight || document.documentElement.clientHeight
-    ;[...revealEls, ...fadeEls].forEach((el) => {
-      const rect = el.getBoundingClientRect()
-      if (rect.top < vh && rect.bottom > 0) el.classList.add('show')
+    requestAnimationFrame(() => {
+      ;[...revealEls, ...fadeEls].forEach((el) => {
+        const rect = el.getBoundingClientRect()
+        if (rect.top < vh && rect.bottom > 0) el.classList.add('show')
+      })
     })
 
     return () => observer.disconnect()
