@@ -154,15 +154,15 @@ export default function App() {
         <section id="skills" className="bg-inherit border-t border-zinc-200/60 dark:border-zinc-800/60 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
           <h2 className="text-2xl font-semibold fade-in" data-fade>Habilidades</h2>
           <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4 reveal fade-in transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm dark:hover:shadow-zinc-900/50" data-reveal data-fade>
+            <div style={{ transitionDelay: '0ms' }} className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4 reveal fade-in transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm dark:hover:shadow-zinc-900/50" data-reveal data-fade>
               <h3 className="font-medium">Frontend</h3>
               <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">React, TypeScript, Tailwind CSS</p>
             </div>
-            <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4 reveal fade-in transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm dark:hover:shadow-zinc-900/50" data-reveal data-fade>
+            <div style={{ transitionDelay: '100ms' }} className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4 reveal fade-in transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm dark:hover:shadow-zinc-900/50" data-reveal data-fade>
               <h3 className="font-medium">Backend</h3>
               <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">Node.js, REST, autenticación</p>
             </div>
-            <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4 reveal fade-in transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm dark:hover:shadow-zinc-900/50" data-reveal data-fade>
+            <div style={{ transitionDelay: '200ms' }} className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4 reveal fade-in transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm dark:hover:shadow-zinc-900/50" data-reveal data-fade>
               <h3 className="font-medium">Bases de datos</h3>
               <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">PostgreSQL, MySQL, modelado y consultas</p>
             </div>
@@ -173,9 +173,9 @@ export default function App() {
         <section id="projects" className="bg-inherit border-t border-zinc-200/60 dark:border-zinc-800/60 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
           <h2 className="text-2xl font-semibold fade-in" data-fade>Proyectos</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-3">
-            <ProjectCard title="Landing Page" description="Página de presentación rápida y moderna con performance optimizada." stack="React, Tailwind" />
-            <ProjectCard title="E‑commerce" description="Catálogo, carrito y checkout; enfoque en UX y mantenibilidad." stack="React, Node, DB" />
-            <ProjectCard title="Inventario" description="Gestión de inventarios sin ventas; roles y reportes básicos." stack="React, API REST, SQL" />
+            <ProjectCard delayMs={0} title="Landing Page" description="Página de presentación rápida y moderna con performance optimizada." stack="React, Tailwind" />
+            <ProjectCard delayMs={100} title="E‑commerce" description="Catálogo, carrito y checkout; enfoque en UX y mantenibilidad." stack="React, Node, DB" />
+            <ProjectCard delayMs={200} title="Inventario" description="Gestión de inventarios sin ventas; roles y reportes básicos." stack="React, API REST, SQL" />
           </div>
         </section>
 
@@ -215,9 +215,9 @@ export default function App() {
   )
 }
 
-function ProjectCard({ title, description, stack }: { title: string; description: string; stack: string }) {
+function ProjectCard({ title, description, stack, delayMs }: { title: string; description: string; stack: string; delayMs?: number }) {
   return (
-    <article className="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 hover:border-orange-300 dark:hover:border-orange-600 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:hover:shadow-zinc-900/50 reveal fade-in" data-reveal data-fade>
+    <article style={{ transitionDelay: `${delayMs ?? 0}ms` }} className="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 hover:border-orange-300 dark:hover:border-orange-600 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:hover:shadow-zinc-900/50 reveal fade-in" data-reveal data-fade>
       <h3 className="font-medium">{title}</h3>
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">{description}</p>
       <p className="mt-3 text-xs text-zinc-500">Stack: {stack}</p>
