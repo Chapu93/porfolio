@@ -3,10 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  html, body, #root {
-    height: 100%;
-  }
-  body {
-    @apply bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased;
-  }
+  html, body, #root { height: 100%; }
+  html { @apply bg-white dark:bg-zinc-950; scroll-behavior: smooth; }
+  body { @apply text-zinc-900 dark:text-zinc-100 antialiased; }
 }
