@@ -71,7 +71,7 @@ export default function App() {
       <header className="sticky top-0 z-40 bg-white/80 dark:bg-zinc-950/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-zinc-950/60 border-b border-zinc-200/60 dark:border-zinc-800/60 transition-colors duration-300">
         <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-600 text-white grid place-items-center font-semibold">
+            <div className="h-9 w-9 rounded-lg bg-gradient-to-br from-orange-500 to-amber-600 text-white grid place-items-center font-semibold">
               JV
             </div>
             <div>
@@ -81,16 +81,16 @@ export default function App() {
           </div>
           <nav className="hidden md:flex items-center gap-6">
             <a href="#about" className={`text-sm font-medium hover:text-zinc-900 dark:hover:text-white ${active === 'about' ? 'text-zinc-900 dark:text-white' : 'text-zinc-600 dark:text-zinc-300'}`}>Sobre mí
-              <span className={`block h-0.5 rounded bg-indigo-600 transition-all ${active === 'about' ? 'w-full' : 'w-0'}`}></span>
+              <span className={`block h-0.5 rounded bg-orange-600 transition-all ${active === 'about' ? 'w-full' : 'w-0'}`}></span>
             </a>
             <a href="#skills" className={`text-sm font-medium hover:text-zinc-900 dark:hover:text-white ${active === 'skills' ? 'text-zinc-900 dark:text-white' : 'text-zinc-600 dark:text-zinc-300'}`}>Habilidades
-              <span className={`block h-0.5 rounded bg-indigo-600 transition-all ${active === 'skills' ? 'w-full' : 'w-0'}`}></span>
+              <span className={`block h-0.5 rounded bg-orange-600 transition-all ${active === 'skills' ? 'w-full' : 'w-0'}`}></span>
             </a>
             <a href="#projects" className={`text-sm font-medium hover:text-zinc-900 dark:hover:text-white ${active === 'projects' ? 'text-zinc-900 dark:text-white' : 'text-zinc-600 dark:text-zinc-300'}`}>Proyectos
-              <span className={`block h-0.5 rounded bg-indigo-600 transition-all ${active === 'projects' ? 'w-full' : 'w-0'}`}></span>
+              <span className={`block h-0.5 rounded bg-orange-600 transition-all ${active === 'projects' ? 'w-full' : 'w-0'}`}></span>
             </a>
             <a href="#contact" className={`text-sm font-medium hover:text-zinc-900 dark:hover:text-white ${active === 'contact' ? 'text-zinc-900 dark:text-white' : 'text-zinc-600 dark:text-zinc-300'}`}>Contacto
-              <span className={`block h-0.5 rounded bg-indigo-600 transition-all ${active === 'contact' ? 'w-full' : 'w-0'}`}></span>
+              <span className={`block h-0.5 rounded bg-orange-600 transition-all ${active === 'contact' ? 'w-full' : 'w-0'}`}></span>
             </a>
           </nav>
           <div className="flex items-center gap-2">
@@ -117,12 +117,12 @@ export default function App() {
                 Soy desarrollador full‑stack con enfoque en frontend, backend y bases de datos. Resido en Viedma, Río Negro, Argentina. Titulado como Técnico Superior en Computación con orientación administrativa.
               </p>
               <div className="mt-8 flex gap-3">
-                <a href="#projects" className="inline-flex items-center rounded-lg bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-500">Ver proyectos</a>
+                <a href="#projects" className="inline-flex items-center rounded-lg bg-orange-600 px-4 py-2 text-white hover:bg-orange-500">Ver proyectos</a>
                 <a href="#contact" className="inline-flex items-center rounded-lg border border-zinc-300 dark:border-zinc-700 px-4 py-2 text-zinc-800 dark:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800">Contactar</a>
               </div>
             </div>
             <div className="md:justify-self-end reveal" data-reveal>
-              <div className="h-48 md:h-64 w-full md:w-80 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-violet-600/20 border border-zinc-200 dark:border-zinc-800 grid place-items-center text-zinc-500 dark:text-zinc-400">
+              <div className="h-48 md:h-64 w-full md:w-80 rounded-2xl bg-gradient-to-br from-orange-500/20 to-amber-600/20 border border-zinc-200 dark:border-zinc-800 grid place-items-center text-zinc-500 dark:text-zinc-400">
                 Foto/Logo (pronto)
               </div>
             </div>
@@ -188,7 +188,7 @@ export default function App() {
               <label htmlFor="message" className="text-sm text-zinc-600 dark:text-zinc-300">Mensaje</label>
               <textarea id="message" name="message" rows={4} required className="rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-3 py-2 transition-colors" />
             </div>
-            <button type="submit" className="inline-flex items-center rounded-lg bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-500 w-fit">Enviar</button>
+            <button type="submit" className="inline-flex items-center rounded-lg bg-orange-600 px-4 py-2 text-white hover:bg-orange-500 w-fit">Enviar</button>
           </form>
         </section>
       </main>
@@ -204,7 +204,7 @@ export default function App() {
 
 function ProjectCard({ title, description, stack }: { title: string; description: string; stack: string }) {
   return (
-    <article className="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 hover:border-indigo-300 dark:hover:border-indigo-600 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:hover:shadow-zinc-900/50 reveal" data-reveal>
+    <article className="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 hover:border-orange-300 dark:hover:border-orange-600 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:hover:shadow-zinc-900/50 reveal" data-reveal>
       <h3 className="font-medium">{title}</h3>
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">{description}</p>
       <p className="mt-3 text-xs text-zinc-500">Stack: {stack}</p>
