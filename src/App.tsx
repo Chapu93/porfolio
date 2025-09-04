@@ -107,7 +107,7 @@ export default function App() {
 
       <main>
         {/* Hero */}
-        <section id="hero" className="border-b border-zinc-200/60 dark:border-zinc-800/60">
+        <section id="hero" className="bg-white dark:bg-zinc-950 border-b border-zinc-200/60 dark:border-zinc-800/60">
           <div className="mx-auto max-w-6xl px-4 py-20 grid gap-8 md:grid-cols-2 items-center">
             <div className="reveal" data-reveal>
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
@@ -130,7 +130,7 @@ export default function App() {
         </section>
 
         {/* Sobre mí */}
-        <section id="about" className="mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
+        <section id="about" className="bg-white dark:bg-zinc-950 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
           <h2 className="text-2xl font-semibold">Sobre mí</h2>
           <p className="mt-3 text-zinc-600 dark:text-zinc-300 reveal" data-reveal>
             Me especializo en crear interfaces limpias y APIs escalables. Disfruto optimizar rendimiento, accesibilidad y DX. Busco aportar valor medible a equipos ambiciosos.
@@ -138,7 +138,7 @@ export default function App() {
         </section>
 
         {/* Habilidades */}
-        <section id="skills" className="mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
+        <section id="skills" className="bg-white dark:bg-zinc-950 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
           <h2 className="text-2xl font-semibold">Habilidades</h2>
           <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4 reveal" data-reveal>
@@ -157,7 +157,7 @@ export default function App() {
         </section>
 
         {/* Proyectos */}
-        <section id="projects" className="mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
+        <section id="projects" className="bg-white dark:bg-zinc-950 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
           <h2 className="text-2xl font-semibold">Proyectos</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-3">
             <ProjectCard title="Landing Page" description="Página de presentación rápida y moderna con performance optimizada." stack="React, Tailwind" />
@@ -167,7 +167,7 @@ export default function App() {
         </section>
 
         {/* Contacto */}
-        <section id="contact" className="mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
+        <section id="contact" className="bg-white dark:bg-zinc-950 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
           <h2 className="text-2xl font-semibold">Contacto</h2>
           <form
             className="mt-6 grid gap-4 max-w-xl"
@@ -193,7 +193,7 @@ export default function App() {
         </section>
       </main>
 
-      <footer className="border-t border-zinc-200/60 dark:border-zinc-800/60">
+      <footer className="bg-white dark:bg-zinc-950 border-t border-zinc-200/60 dark:border-zinc-800/60">
         <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-zinc-500">
           © {new Date().getFullYear()} Joaquín Villaverde. Todos los derechos reservados.
         </div>
