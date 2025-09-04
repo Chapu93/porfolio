@@ -40,6 +40,7 @@ export default function App() {
   useEffect(() => {
     const sections = Array.from(document.querySelectorAll<HTMLElement>('section[id]'))
     const revealEls = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'))
+    const fadeEls = Array.from(document.querySelectorAll<HTMLElement>('[data-fade]'))
 
     observerRef.current?.disconnect()
     const observer = new IntersectionObserver(
@@ -61,11 +62,12 @@ export default function App() {
 
     sections.forEach((s) => observer.observe(s))
     revealEls.forEach((el) => observer.observe(el))
+    fadeEls.forEach((el) => observer.observe(el))
     observerRef.current = observer
 
     // Revelar de inicio los elementos ya visibles en viewport
     const vh = window.innerHeight || document.documentElement.clientHeight
-    revealEls.forEach((el) => {
+    ;[...revealEls, ...fadeEls].forEach((el) => {
       const rect = el.getBoundingClientRect()
       if (rect.top < vh && rect.bottom > 0) el.classList.add('show')
     })
@@ -138,7 +140,7 @@ export default function App() {
 
         {/* Sobre mí */}
         <section id="about" className="bg-inherit border-t border-zinc-200/60 dark:border-zinc-800/60 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
-          <h2 className="text-2xl font-semibold reveal" data-reveal>Sobre mí</h2>
+          <h2 className="text-2xl font-semibold fade-in" data-fade>Sobre mí</h2>
           <p className="mt-3 text-zinc-600 dark:text-zinc-300 reveal" data-reveal>
             Me especializo en crear interfaces limpias y APIs escalables. Disfruto optimizar rendimiento, accesibilidad y DX. Busco aportar valor medible a equipos ambiciosos.
           </p>
@@ -146,17 +148,17 @@ export default function App() {
 
         {/* Habilidades */}
         <section id="skills" className="bg-inherit border-t border-zinc-200/60 dark:border-zinc-800/60 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
-          <h2 className="text-2xl font-semibold reveal" data-reveal>Habilidades</h2>
+          <h2 className="text-2xl font-semibold fade-in" data-fade>Habilidades</h2>
           <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4 reveal transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm dark:hover:shadow-zinc-900/50" data-reveal>
+            <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4 reveal fade-in transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm dark:hover:shadow-zinc-900/50" data-reveal data-fade>
               <h3 className="font-medium">Frontend</h3>
               <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">React, TypeScript, Tailwind CSS</p>
             </div>
-            <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4 reveal transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm dark:hover:shadow-zinc-900/50" data-reveal>
+            <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4 reveal fade-in transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm dark:hover:shadow-zinc-900/50" data-reveal data-fade>
               <h3 className="font-medium">Backend</h3>
               <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">Node.js, REST, autenticación</p>
             </div>
-            <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4 reveal transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm dark:hover:shadow-zinc-900/50" data-reveal>
+            <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-4 reveal fade-in transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm dark:hover:shadow-zinc-900/50" data-reveal data-fade>
               <h3 className="font-medium">Bases de datos</h3>
               <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">PostgreSQL, MySQL, modelado y consultas</p>
             </div>
@@ -165,7 +167,7 @@ export default function App() {
 
         {/* Proyectos */}
         <section id="projects" className="bg-inherit border-t border-zinc-200/60 dark:border-zinc-800/60 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
-          <h2 className="text-2xl font-semibold reveal" data-reveal>Proyectos</h2>
+          <h2 className="text-2xl font-semibold fade-in" data-fade>Proyectos</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-3">
             <ProjectCard title="Landing Page" description="Página de presentación rápida y moderna con performance optimizada." stack="React, Tailwind" />
             <ProjectCard title="E‑commerce" description="Catálogo, carrito y checkout; enfoque en UX y mantenibilidad." stack="React, Node, DB" />
@@ -175,7 +177,7 @@ export default function App() {
 
         {/* Contacto */}
         <section id="contact" className="bg-inherit border-t border-zinc-200/60 dark:border-zinc-800/60 mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
-          <h2 className="text-2xl font-semibold reveal" data-reveal>Contacto</h2>
+          <h2 className="text-2xl font-semibold fade-in" data-fade>Contacto</h2>
           <form
             className="mt-6 grid gap-4 max-w-xl"
             onSubmit={(e) => {
@@ -211,7 +213,7 @@ export default function App() {
 
 function ProjectCard({ title, description, stack }: { title: string; description: string; stack: string }) {
   return (
-    <article className="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 hover:border-orange-300 dark:hover:border-orange-600 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:hover:shadow-zinc-900/50 reveal" data-reveal>
+    <article className="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 hover:border-orange-300 dark:hover:border-orange-600 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:hover:shadow-zinc-900/50 reveal fade-in" data-reveal data-fade>
       <h3 className="font-medium">{title}</h3>
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">{description}</p>
       <p className="mt-3 text-xs text-zinc-500">Stack: {stack}</p>
