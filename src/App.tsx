@@ -80,7 +80,7 @@ export default function App() {
   }, [])
 
   return (
-    <div className="min-h-full transition-colors duration-300">
+    <div className="min-h-full transition-colors duration-300" id="app-root">
       <header className="sticky top-0 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-slate-900/60 border-b border-zinc-200/60 dark:border-slate-800/40 transition-colors duration-300">
         <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -109,7 +109,12 @@ export default function App() {
           <div className="flex items-center gap-2">
             <button
               aria-label="Cambiar tema"
-              onClick={() => setIsDark((v) => !v)}
+              onClick={() => {
+                const rootEl = document.getElementById('app-root')
+                rootEl?.classList.add('theme-transition')
+                setIsDark((v) => !v)
+                window.setTimeout(() => rootEl?.classList.remove('theme-transition'), 500)
+              }}
               className="inline-flex h-9 items-center rounded-lg border border-zinc-300 dark:border-zinc-700 px-3 text-sm text-zinc-700 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800"
             >
               {isDark ? '☀️ Claro' : '🌙 Oscuro'}

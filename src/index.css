@@ -31,3 +31,6 @@
   }
   .underline-anim.show::after { width: 3.5rem; }
 }
+
+/* Transición fluida de tema: aplica a elementos para suavizar cambio de colores */
+.theme-transition * { transition: background-color 450ms ease, color 450ms ease, border-color 450ms ease, fill 450ms ease, stroke 450ms ease; }
