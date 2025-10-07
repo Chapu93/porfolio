@@ -1,29 +1,59 @@
 <!doctype html>
-<html lang="es" class="bg-white dark:bg-zinc-950 no-js">
+<html lang="es" class="no-js bg-white dark:bg-zinc-950">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <link rel="canonical" href="https://chapu.dev/" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Joaquín Villaverde — Desarrollador Web</title>
-    <meta name="description" content="Portfolio de Joaquín Villaverde, desarrollador web front, back end y bases de datos." />
+    <meta
+      name="description"
+      content="Portfolio de Joaquín Villaverde, desarrollador web front, back end y bases de datos."
+    />
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Joaquín Villaverde" />
+    <meta property="og:title" content="Joaquín Villaverde — Desarrollador Web" />
+    <meta
+      property="og:description"
+      content="Portfolio de Joaquín Villaverde, desarrollador web front, back end y bases de datos."
+    />
+    <meta property="og:url" content="https://chapu.dev/" />
+    <meta property="og:image" content="/social/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Joaquín Villaverde — Desarrollador Web" />
+    <meta
+      name="twitter:description"
+      content="Portfolio de Joaquín Villaverde, desarrollador web front, back end y bases de datos."
+    />
+    <meta name="twitter:image" content="/social/og-image.jpg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
     <script>
-      (() => {
+      ;(() => {
         try {
-          const stored = localStorage.getItem('theme');
-          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          const isDark = stored ? stored === 'dark' : prefersDark;
-          const root = document.documentElement;
-          if (isDark) root.classList.add('dark');
-          else root.classList.remove('dark');
-          root.classList.remove('no-js');
+          const stored = localStorage.getItem('theme')
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isDark = stored ? stored === 'dark' : prefersDark
+          const root = document.documentElement
+          if (isDark) root.classList.add('dark')
+          else root.classList.remove('dark')
+          root.classList.remove('no-js')
         } catch (_) {}
-      })();
+      })()
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- Plausible analytics (auto-ignore localhost) -->
+    <script defer data-domain="chapu.dev" src="https://plausible.io/js/script.js"></script>
   </body>
 </html>

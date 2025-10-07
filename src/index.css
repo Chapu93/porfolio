@@ -3,22 +3,66 @@
 @tailwind utilities;
 
 @layer base {
-  html, body, #root { height: 100%; }
-  html { @apply bg-white dark:bg-zinc-900; scroll-behavior: smooth; }
-  body { @apply bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 antialiased transition-colors font-sans; }
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  html {
+    @apply bg-white dark:bg-zinc-900;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white font-sans text-zinc-900 antialiased transition-colors dark:bg-zinc-900 dark:text-zinc-100;
+  }
+  *:focus-visible {
+    outline: 2px solid theme('colors.orange.600');
+    outline-offset: 2px;
+  }
+  /* Enlace para saltar al contenido principal */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+    width: auto;
+    height: auto;
+    @apply z-50 rounded-lg bg-orange-600 px-3 py-2 text-white shadow-lg;
+  }
 }
 
 @layer utilities {
-  .reveal { @apply opacity-0 translate-y-6 transition-all duration-1000 ease-out; }
-  .reveal.show { @apply opacity-100 translate-y-0; }
+  .reveal {
+    @apply translate-y-6 opacity-0 transition-all duration-1000 ease-out;
+  }
+  .reveal.show {
+    @apply translate-y-0 opacity-100;
+  }
   /* Fallback si JS no carga */
-  .no-js .reveal { @apply opacity-100 translate-y-0; }
-  .fade-in { @apply opacity-0 transition-opacity duration-1000 ease-out; }
-  .fade-in.show { @apply opacity-100; }
-  .no-js .fade-in { @apply opacity-100; }
+  .no-js .reveal {
+    @apply translate-y-0 opacity-100;
+  }
+  .fade-in {
+    @apply opacity-0 transition-opacity duration-1000 ease-out;
+  }
+  .fade-in.show {
+    @apply opacity-100;
+  }
+  .no-js .fade-in {
+    @apply opacity-100;
+  }
 
   /* Subrayado animado para títulos */
-  .underline-anim { position: relative; display: inline-block; }
+  .underline-anim {
+    position: relative;
+    display: inline-block;
+  }
   .underline-anim::after {
     content: '';
     position: absolute;
@@ -29,5 +73,7 @@
     width: 0;
     transition: width 1000ms ease-out;
   }
-  .underline-anim.show::after { width: 3.5rem; }
+  .underline-anim.show::after {
+    width: 3.5rem;
+  }
 }
