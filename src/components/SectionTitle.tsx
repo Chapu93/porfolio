@@ -5,4 +5,3 @@ export function SectionTitle({ children }: { children: React.ReactNode }) {
     </h2>
   )
 }
-

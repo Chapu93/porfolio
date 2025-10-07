@@ -3,4 +3,3 @@ export const env = {
   contactToken: import.meta.env.VITE_CONTACT_TOKEN as string | undefined,
   analyticsDomain: (import.meta.env.VITE_ANALYTICS_DOMAIN as string | undefined) ?? 'chapu.dev',
 }
-

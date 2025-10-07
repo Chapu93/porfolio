@@ -15,10 +15,15 @@ export function ProjectList() {
       <ProjectFilters selected={tag} onChange={setTag} />
       <div className="grid gap-6 md:grid-cols-3">
         {filtered.map((p) => (
-          <ProjectCard key={p.id} title={p.title} description={p.description} stack={p.stack.join(', ')} delayMs={p.delayMs} />
+          <ProjectCard
+            key={p.id}
+            title={p.title}
+            description={p.description}
+            stack={p.stack.join(', ')}
+            delayMs={p.delayMs}
+          />
         ))}
       </div>
     </div>
   )
 }
-

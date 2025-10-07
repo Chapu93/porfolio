@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { sendContact } from '../lib/contact'
+import { useI18n } from '../i18n'
 
 export function ContactForm() {
+  const { t } = useI18n()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
@@ -18,18 +20,18 @@ export function ContactForm() {
         const res = await sendContact({ name, email, message })
         setLoading(false)
         if (res.ok) {
-          setResult({ type: 'success', text: '¡Gracias! Responderé a la brevedad.' })
+          setResult({ type: 'success', text: t('contact.success') })
           setName('')
           setEmail('')
           setMessage('')
         } else {
-          setResult({ type: 'error', text: res.error ?? 'Ocurrió un error. Intenta nuevamente.' })
+          setResult({ type: 'error', text: res.error ?? t('contact.error') })
         }
       }}
     >
       <div className="grid gap-1">
         <label htmlFor="name" className="text-sm text-zinc-600 dark:text-zinc-300">
-          Nombre
+          {t('contact.name')}
         </label>
         <input
           id="name"
@@ -42,7 +44,7 @@ export function ContactForm() {
       </div>
       <div className="grid gap-1">
         <label htmlFor="email" className="text-sm text-zinc-600 dark:text-zinc-300">
-          Email
+          {t('contact.email')}
         </label>
         <input
           id="email"
@@ -56,7 +58,7 @@ export function ContactForm() {
       </div>
       <div className="grid gap-1">
         <label htmlFor="message" className="text-sm text-zinc-600 dark:text-zinc-300">
-          Mensaje
+          {t('contact.message')}
         </label>
         <textarea
           id="message"
@@ -74,7 +76,7 @@ export function ContactForm() {
           disabled={loading}
           className="inline-flex w-fit items-center rounded-lg bg-orange-600 px-4 py-2 text-white hover:bg-orange-500 disabled:cursor-not-allowed disabled:opacity-70"
         >
-          {loading ? 'Enviando…' : 'Enviar'}
+          {loading ? t('contact.sending') : t('contact.submit')}
         </button>
         {result && (
           <p className={`text-sm ${result.type === 'success' ? 'text-green-600' : 'text-red-600'}`}>
@@ -85,4 +87,3 @@ export function ContactForm() {
     </form>
   )
 }
-

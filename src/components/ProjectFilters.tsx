@@ -1,6 +1,14 @@
 import { allTags } from '../data/projects'
+import { useI18n } from '../i18n'
 
-export function ProjectFilters({ selected, onChange }: { selected: string | 'all'; onChange: (v: string | 'all') => void }) {
+export function ProjectFilters({
+  selected,
+  onChange,
+}: {
+  selected: string | 'all'
+  onChange: (v: string | 'all') => void
+}) {
+  const { t } = useI18n()
   return (
     <div className="flex flex-wrap gap-2">
       {(['all', ...allTags] as const).map((tag) => (
@@ -15,10 +23,9 @@ export function ProjectFilters({ selected, onChange }: { selected: string | 'all
           }`}
           aria-pressed={selected === tag}
         >
-          {tag === 'all' ? 'Todos' : `#${tag}`}
+          {tag === 'all' ? t('projects.all') : `#${tag}`}
         </button>
       ))}
     </div>
   )
 }
-

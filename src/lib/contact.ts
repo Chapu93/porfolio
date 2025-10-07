@@ -6,7 +6,9 @@ export type ContactPayload = {
   message: string
 }
 
-export async function sendContact(payload: ContactPayload): Promise<{ ok: boolean; error?: string }> {
+export async function sendContact(
+  payload: ContactPayload
+): Promise<{ ok: boolean; error?: string }> {
   if (!env.contactEndpoint) {
     await new Promise((r) => setTimeout(r, 500))
     return { ok: true }
@@ -31,4 +33,3 @@ export async function sendContact(payload: ContactPayload): Promise<{ ok: boolea
     return { ok: false, error: (e as Error).message }
   }
 }
-

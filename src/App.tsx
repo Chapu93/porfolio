@@ -6,9 +6,11 @@ import { ContactForm } from './components/ContactForm'
 import { ProjectList } from './components/ProjectList'
 import type { SectionId } from './types/sections'
 import { useTheme } from './hooks/useTheme'
+import { useI18n } from './i18n'
 
 export default function App() {
   const { isDark, setIsDark } = useTheme()
+  const { t } = useI18n()
   const [active, setActive] = useState<SectionId>('hero')
   const observerRef = useRef<IntersectionObserver | null>(null)
 
@@ -66,9 +68,7 @@ export default function App() {
         >
           <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-20 md:grid-cols-2">
             <div className="reveal" data-reveal>
-              <h1 className="text-4xl font-bold tracking-tight md:text-5xl">
-                Construyo productos web confiables y modernos
-              </h1>
+              <h1 className="text-4xl font-bold tracking-tight md:text-5xl">{t('hero.title')}</h1>
               <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-300">
                 Soy desarrollador full‑stack con enfoque en frontend, backend y bases de datos.
                 Resido en Viedma, Río Negro, Argentina. Titulado como Técnico Superior en
@@ -79,13 +79,13 @@ export default function App() {
                   href="#projects"
                   className="inline-flex items-center rounded-lg bg-orange-600 px-4 py-2 text-white hover:bg-orange-500"
                 >
-                  Ver proyectos
+                  {t('hero.cta.projects')}
                 </a>
                 <a
                   href="#contact"
                   className="inline-flex items-center rounded-lg border border-zinc-300 px-4 py-2 text-zinc-800 hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-100 dark:hover:bg-zinc-800"
                 >
-                  Contactar
+                  {t('hero.cta.contact')}
                 </a>
               </div>
             </div>
@@ -102,10 +102,9 @@ export default function App() {
           id="about"
           className="mx-auto max-w-6xl scroll-mt-24 border-t border-zinc-200/60 bg-inherit px-4 py-16 dark:border-slate-800/40"
         >
-          <SectionTitle>Sobre mí</SectionTitle>
+          <SectionTitle>{t('about.title')}</SectionTitle>
           <p className="reveal mt-3 text-zinc-600 dark:text-zinc-300" data-reveal>
-            Me especializo en crear interfaces limpias y APIs escalables. Disfruto optimizar
-            rendimiento, accesibilidad y DX. Busco aportar valor medible a equipos ambiciosos.
+            {t('about.text')}
           </p>
         </section>
 
@@ -114,7 +113,7 @@ export default function App() {
           id="skills"
           className="mx-auto max-w-6xl scroll-mt-24 border-t border-zinc-200/60 bg-inherit px-4 py-16 dark:border-slate-800/40"
         >
-          <SectionTitle>Habilidades</SectionTitle>
+          <SectionTitle>{t('skills.title')}</SectionTitle>
           <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             <div
               style={{ transitionDelay: '0ms' }}
@@ -157,7 +156,7 @@ export default function App() {
           id="projects"
           className="mx-auto max-w-6xl scroll-mt-24 border-t border-zinc-200/60 bg-inherit px-4 py-16 dark:border-slate-800/40"
         >
-          <SectionTitle>Proyectos</SectionTitle>
+          <SectionTitle>{t('projects.title')}</SectionTitle>
           <ProjectList />
         </section>
 
@@ -166,7 +165,7 @@ export default function App() {
           id="contact"
           className="mx-auto max-w-6xl scroll-mt-24 border-t border-zinc-200/60 bg-inherit px-4 py-16 dark:border-slate-800/40"
         >
-          <SectionTitle>Contacto</SectionTitle>
+          <SectionTitle>{t('contact.title')}</SectionTitle>
           <ContactForm />
         </section>
       </main>

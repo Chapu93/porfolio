@@ -19,8 +19,9 @@ export function ProjectCard({
       <h3 className="font-medium">{title}</h3>
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">{description}</p>
       <p className="mt-3 text-xs text-zinc-500">Stack: {stack}</p>
-      <div className="mt-4 grid h-32 place-items-center rounded-lg bg-zinc-100 text-zinc-400 dark:bg-zinc-900 dark:text-zinc-600">Captura próximamente</div>
+      <div className="mt-4 grid h-32 place-items-center rounded-lg bg-zinc-100 text-zinc-400 dark:bg-zinc-900 dark:text-zinc-600">
+        Captura próximamente
+      </div>
     </article>
   )
 }
-
