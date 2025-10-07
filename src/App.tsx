@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import { Header } from './components/Header'
 import { SectionTitle } from './components/SectionTitle'
 import { ProjectCard } from './components/ProjectCard'
+import { ContactForm } from './components/ContactForm'
+import { ProjectList } from './components/ProjectList'
 import type { SectionId } from './types/sections'
 import { useTheme } from './hooks/useTheme'
 
@@ -156,26 +158,7 @@ export default function App() {
           className="mx-auto max-w-6xl scroll-mt-24 border-t border-zinc-200/60 bg-inherit px-4 py-16 dark:border-slate-800/40"
         >
           <SectionTitle>Proyectos</SectionTitle>
-          <div className="mt-6 grid gap-6 md:grid-cols-3">
-            <ProjectCard
-              delayMs={0}
-              title="Landing Page"
-              description="Página de presentación rápida y moderna con performance optimizada."
-              stack="React, Tailwind"
-            />
-            <ProjectCard
-              delayMs={100}
-              title="E‑commerce"
-              description="Catálogo, carrito y checkout; enfoque en UX y mantenibilidad."
-              stack="React, Node, DB"
-            />
-            <ProjectCard
-              delayMs={200}
-              title="Inventario"
-              description="Gestión de inventarios sin ventas; roles y reportes básicos."
-              stack="React, API REST, SQL"
-            />
-          </div>
+          <ProjectList />
         </section>
 
         {/* Contacto */}
@@ -184,55 +167,7 @@ export default function App() {
           className="mx-auto max-w-6xl scroll-mt-24 border-t border-zinc-200/60 bg-inherit px-4 py-16 dark:border-slate-800/40"
         >
           <SectionTitle>Contacto</SectionTitle>
-          <form
-            className="mt-6 grid max-w-xl gap-4"
-            onSubmit={(e) => {
-              e.preventDefault()
-              alert('Gracias por tu mensaje. Esta es una versión inicial sin envío.')
-            }}
-          >
-            <div className="grid gap-1">
-              <label htmlFor="name" className="text-sm text-zinc-600 dark:text-zinc-300">
-                Nombre
-              </label>
-              <input
-                id="name"
-                name="name"
-                required
-                className="h-11 rounded-lg border border-zinc-300 bg-white px-3 transition-colors dark:border-slate-700 dark:bg-slate-900"
-              />
-            </div>
-            <div className="grid gap-1">
-              <label htmlFor="email" className="text-sm text-zinc-600 dark:text-zinc-300">
-                Email
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                className="h-11 rounded-lg border border-zinc-300 bg-white px-3 transition-colors dark:border-slate-700 dark:bg-slate-900"
-              />
-            </div>
-            <div className="grid gap-1">
-              <label htmlFor="message" className="text-sm text-zinc-600 dark:text-zinc-300">
-                Mensaje
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                required
-                className="rounded-lg border border-zinc-300 bg-white px-3 py-2 transition-colors dark:border-slate-700 dark:bg-slate-900"
-              />
-            </div>
-            <button
-              type="submit"
-              className="inline-flex w-fit items-center rounded-lg bg-orange-600 px-4 py-2 text-white hover:bg-orange-500"
-            >
-              Enviar
-            </button>
-          </form>
+          <ContactForm />
         </section>
       </main>
 
