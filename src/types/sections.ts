@@ -1,0 +1,2 @@
+export type SectionId = 'hero' | 'about' | 'skills' | 'projects' | 'contact'
+

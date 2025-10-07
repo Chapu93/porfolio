@@ -15,6 +15,26 @@
   body {
     @apply bg-white font-sans text-zinc-900 antialiased transition-colors dark:bg-zinc-900 dark:text-zinc-100;
   }
+  *:focus-visible {
+    outline: 2px solid theme('colors.orange.600');
+    outline-offset: 2px;
+  }
+  /* Enlace para saltar al contenido principal */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+    width: auto;
+    height: auto;
+    @apply z-50 rounded-lg bg-orange-600 px-3 py-2 text-white shadow-lg;
+  }
 }
 
 @layer utilities {

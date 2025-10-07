@@ -1,39 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
-
-type SectionId = 'hero' | 'about' | 'skills' | 'projects' | 'contact'
-
-function useTheme() {
-  const [isDark, setIsDark] = useState<boolean>(() => {
-    if (typeof window === 'undefined') return false
-    const stored = localStorage.getItem('theme')
-    if (stored) return stored === 'dark'
-    return window.matchMedia('(prefers-color-scheme: dark)').matches
-  })
-
-  useEffect(() => {
-    const root = document.documentElement
-    if (isDark) {
-      root.classList.add('dark')
-      localStorage.setItem('theme', 'dark')
-    } else {
-      root.classList.remove('dark')
-      localStorage.setItem('theme', 'light')
-    }
-  }, [isDark])
-
-  return { isDark, setIsDark }
-}
-
-function NavLink({ to, children }: { to: SectionId; children: React.ReactNode }) {
-  return (
-    <a
-      href={`#${to}`}
-      className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white"
-    >
-      {children}
-    </a>
-  )
-}
+import { Header } from './components/Header'
+import { SectionTitle } from './components/SectionTitle'
+import { ProjectCard } from './components/ProjectCard'
+import type { SectionId } from './types/sections'
+import { useTheme } from './hooks/useTheme'
 
 export default function App() {
   const { isDark, setIsDark } = useTheme()
@@ -84,70 +54,9 @@ export default function App() {
 
   return (
     <div className="min-h-full transition-colors duration-300">
-      <header className="sticky top-0 z-40 border-b border-zinc-200/60 bg-white/80 backdrop-blur transition-colors duration-300 supports-[backdrop-filter]:bg-white/60 dark:border-slate-800/40 dark:bg-slate-900/80 dark:supports-[backdrop-filter]:bg-slate-900/60">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-          <div className="flex items-center gap-3">
-            <div className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-orange-500 to-amber-600 font-semibold text-white">
-              JV
-            </div>
-            <div>
-              <p className="text-sm text-zinc-600 dark:text-zinc-400">Joaquín Villaverde</p>
-              <p className="text-xs text-zinc-500 dark:text-zinc-500">
-                Desarrollador Web — Front, Back y Bases de Datos
-              </p>
-            </div>
-          </div>
-          <nav className="hidden items-center gap-6 md:flex">
-            <a
-              href="#about"
-              className={`text-sm font-medium hover:text-zinc-900 dark:hover:text-white ${active === 'about' ? 'text-zinc-900 dark:text-white' : 'text-zinc-600 dark:text-zinc-300'}`}
-            >
-              Sobre mí
-              <span
-                className={`block h-0.5 rounded bg-orange-600 transition-all ${active === 'about' ? 'w-full' : 'w-0'}`}
-              ></span>
-            </a>
-            <a
-              href="#skills"
-              className={`text-sm font-medium hover:text-zinc-900 dark:hover:text-white ${active === 'skills' ? 'text-zinc-900 dark:text-white' : 'text-zinc-600 dark:text-zinc-300'}`}
-            >
-              Habilidades
-              <span
-                className={`block h-0.5 rounded bg-orange-600 transition-all ${active === 'skills' ? 'w-full' : 'w-0'}`}
-              ></span>
-            </a>
-            <a
-              href="#projects"
-              className={`text-sm font-medium hover:text-zinc-900 dark:hover:text-white ${active === 'projects' ? 'text-zinc-900 dark:text-white' : 'text-zinc-600 dark:text-zinc-300'}`}
-            >
-              Proyectos
-              <span
-                className={`block h-0.5 rounded bg-orange-600 transition-all ${active === 'projects' ? 'w-full' : 'w-0'}`}
-              ></span>
-            </a>
-            <a
-              href="#contact"
-              className={`text-sm font-medium hover:text-zinc-900 dark:hover:text-white ${active === 'contact' ? 'text-zinc-900 dark:text-white' : 'text-zinc-600 dark:text-zinc-300'}`}
-            >
-              Contacto
-              <span
-                className={`block h-0.5 rounded bg-orange-600 transition-all ${active === 'contact' ? 'w-full' : 'w-0'}`}
-              ></span>
-            </a>
-          </nav>
-          <div className="flex items-center gap-2">
-            <button
-              aria-label="Cambiar tema"
-              onClick={() => setIsDark((v) => !v)}
-              className="inline-flex h-9 items-center rounded-lg border border-zinc-300 px-3 text-sm text-zinc-700 hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-800"
-            >
-              {isDark ? '☀️ Claro' : '🌙 Oscuro'}
-            </button>
-          </div>
-        </div>
-      </header>
+      <Header active={active} isDark={isDark} toggleTheme={() => setIsDark((v) => !v)} />
 
-      <main className="bg-white dark:bg-slate-900">
+      <main id="main" className="bg-white dark:bg-slate-900">
         {/* Hero */}
         <section
           id="hero"
@@ -191,9 +100,7 @@ export default function App() {
           id="about"
           className="mx-auto max-w-6xl scroll-mt-24 border-t border-zinc-200/60 bg-inherit px-4 py-16 dark:border-slate-800/40"
         >
-          <h2 className="fade-in underline-anim text-2xl font-semibold" data-fade>
-            Sobre mí
-          </h2>
+          <SectionTitle>Sobre mí</SectionTitle>
           <p className="reveal mt-3 text-zinc-600 dark:text-zinc-300" data-reveal>
             Me especializo en crear interfaces limpias y APIs escalables. Disfruto optimizar
             rendimiento, accesibilidad y DX. Busco aportar valor medible a equipos ambiciosos.
@@ -205,9 +112,7 @@ export default function App() {
           id="skills"
           className="mx-auto max-w-6xl scroll-mt-24 border-t border-zinc-200/60 bg-inherit px-4 py-16 dark:border-slate-800/40"
         >
-          <h2 className="fade-in underline-anim text-2xl font-semibold" data-fade>
-            Habilidades
-          </h2>
+          <SectionTitle>Habilidades</SectionTitle>
           <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             <div
               style={{ transitionDelay: '0ms' }}
@@ -250,9 +155,7 @@ export default function App() {
           id="projects"
           className="mx-auto max-w-6xl scroll-mt-24 border-t border-zinc-200/60 bg-inherit px-4 py-16 dark:border-slate-800/40"
         >
-          <h2 className="fade-in underline-anim text-2xl font-semibold" data-fade>
-            Proyectos
-          </h2>
+          <SectionTitle>Proyectos</SectionTitle>
           <div className="mt-6 grid gap-6 md:grid-cols-3">
             <ProjectCard
               delayMs={0}
@@ -280,9 +183,7 @@ export default function App() {
           id="contact"
           className="mx-auto max-w-6xl scroll-mt-24 border-t border-zinc-200/60 bg-inherit px-4 py-16 dark:border-slate-800/40"
         >
-          <h2 className="fade-in underline-anim text-2xl font-semibold" data-fade>
-            Contacto
-          </h2>
+          <SectionTitle>Contacto</SectionTitle>
           <form
             className="mt-6 grid max-w-xl gap-4"
             onSubmit={(e) => {
@@ -341,33 +242,5 @@ export default function App() {
         </div>
       </footer>
     </div>
-  )
-}
-
-function ProjectCard({
-  title,
-  description,
-  stack,
-  delayMs,
-}: {
-  title: string
-  description: string
-  stack: string
-  delayMs?: number
-}) {
-  return (
-    <article
-      style={{ transitionDelay: `${delayMs ?? 0}ms` }}
-      className="reveal fade-in rounded-2xl border border-zinc-200 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-orange-300 hover:shadow-md dark:border-slate-800/40 dark:hover:border-orange-600 dark:hover:shadow-black/30"
-      data-reveal
-      data-fade
-    >
-      <h3 className="font-medium">{title}</h3>
-      <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">{description}</p>
-      <p className="mt-3 text-xs text-zinc-500">Stack: {stack}</p>
-      <div className="mt-4 grid h-32 place-items-center rounded-lg bg-zinc-100 text-zinc-400 dark:bg-zinc-900 dark:text-zinc-600">
-        Captura próximamente
-      </div>
-    </article>
   )
 }

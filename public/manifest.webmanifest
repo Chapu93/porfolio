@@ -1,0 +1,13 @@
+{
+  "name": "Portafolio — Joaquín Villaverde",
+  "short_name": "JV Portafolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ea580c",
+  "lang": "es",
+  "icons": [
+    { "src": "/vite.svg", "sizes": "192x192", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
+
